@@ -20,7 +20,7 @@ import AppMessage from './components/AppMessage.vue';
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgb(29, 29, 29);
+    background: #1d1d1d;
     padding: 32px;
     display: grid;
     grid-template-columns: 1fr 2fr;
