@@ -11,8 +11,8 @@
 <style scoped lang="scss">
 .message {
   // width: 785px;
-  background: #262626;
-  border: 1px solid #4d4d4d;
+  background: $second-bg;
+  border: 1px solid $border;
   border-radius: 12px;
   grid-column: span 2;
   padding: 18px 68px 18px 18px;

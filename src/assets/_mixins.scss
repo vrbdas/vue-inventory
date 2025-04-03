@@ -1,0 +1,12 @@
+@mixin cursor-hover {
+    &:hover {
+        cursor:
+            url('@/assets/hand.png') 0 0,
+            auto;
+    }
+    &:active {
+        cursor:
+            url('@/assets/grab.png') 0 0,
+            auto;
+    }
+}

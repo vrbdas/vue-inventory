@@ -9,8 +9,8 @@
 <style scoped lang="scss">
 .char {
   height: 500px;
-  background: #262626;
-  border: 1px solid #4d4d4d;
+  background: $second-bg;
+  border: 1px solid $border;
   border-radius: 12px;
 }
 </style>

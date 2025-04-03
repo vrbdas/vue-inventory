@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -12,8 +12,12 @@
 }
 
 body {
-    cursor: url('@/assets/cursor.png') 0 0, auto;
+    cursor:
+        url('@/assets/cursor.png') 0 0,
+        auto;
 }
+
+// scrollbar
 
 ::-webkit-scrollbar {
     width: 6px;
@@ -23,14 +27,40 @@ body {
 ::-webkit-scrollbar-track {
     background: #1d1d1d;
     border-radius: 10px;
-    border: 1px solid #4d4d4d;
+    border: 1px solid $border;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #4d4d4d;
+    background: $border;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #6c6c6c;
+}
+
+// анимация
+.slide-right-enter-from {
+    transform: translateX(100%);
+}
+.slide-right-enter-active,
+.slide-right-leave-active {
+    transition: transform 0.3s ease-out;
+}
+.slide-right-enter-to,
+.slide-right-leave-from {
+    transform: translateX(0);
+}
+.slide-right-leave-to {
+    transform: translateX(100%);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
