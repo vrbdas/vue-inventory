@@ -12,6 +12,22 @@ let draggedId = null; // переменная для перетаскиваем�
 // запоминает, какую ячейку перетаскиваем
 function onDragStart(index) {
   draggedId = index;
+
+  // Создаём клон элемента для Firefox
+  const ghost = event.target.cloneNode(true);
+
+  ghost.style.position = 'absolute';
+  ghost.style.top = '-9999px';
+  ghost.style.left = '-9999px';
+  document.body.appendChild(ghost);
+
+  // Отображаем drag image под курсором
+  event.dataTransfer.setDragImage(ghost, 0, 0);
+
+  // Удаляем клон сразу после начала перетаскивания
+  setTimeout(() => {
+    document.body.removeChild(ghost);
+  }, 0);
 }
 
 function onDrop(targetId) {
@@ -27,7 +43,7 @@ function cellClick(clickedId) {
   if (modalOpen.value) {
     modalOpen.value = false;
     return;
-  }; // закрыть если уже было открыто
+  } // закрыть если уже было открыто
 
   selectedItem.value = itemsStore.items.find((item) => item.id == clickedId);
   if (selectedItem.value) {
@@ -49,7 +65,11 @@ function handleRemoveItem(value) {
   <div class="inventory-wrapper">
     <Transition name="slide-right">
       <div v-if="modalOpen" class="modal-wrapper">
-        <AppModal @closeModal="modalOpen = false" @removeItem="handleRemoveItem" :item="selectedItem"/>
+        <AppModal
+          @closeModal="modalOpen = false"
+          @removeItem="handleRemoveItem"
+          :item="selectedItem"
+        />
       </div>
     </Transition>
     <div class="inventory">

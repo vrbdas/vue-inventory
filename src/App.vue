@@ -1,14 +1,19 @@
 <script setup>
+import { ref } from 'vue';
 import AppImage from './components/AppImage.vue';
 import AppInventory from './components/AppInventory.vue';
 import AppMessage from './components/AppMessage.vue';
+
+const messageShow = ref(true);
 </script>
 
 <template>
   <div class="app-container">
     <AppImage/>
     <AppInventory/>
-    <AppMessage/>
+    <Transition name="fade">
+      <AppMessage v-if="messageShow" @close="messageShow = false"/>
+    </Transition>
   </div>
 </template>
 

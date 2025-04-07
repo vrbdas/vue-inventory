@@ -43,6 +43,7 @@ const emit = defineEmits(['dragStart']);
     border-top: 1px solid $border;
     border-left: 1px solid $border;
     border-radius: 6px 0px 0px 0px;
+    user-select: none;
   }
 }
 
@@ -51,6 +52,6 @@ const emit = defineEmits(['dragStart']);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  // @include cursor-hover;
+  @include cursor-hover;
 }
 </style>

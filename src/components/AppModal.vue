@@ -29,12 +29,7 @@ function confirmClick() {
     </div>
     <hr />
     <ul class="replacer">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li v-for="item in 6" :key="item"></li>
     </ul>
     <hr />
     <button @click="confirmShow = true" class="modal-btn">Удалить предмет</button>
@@ -140,7 +135,7 @@ hr {
   li {
     list-style: none;
     height: 10px;
-    width: 100%;
+    width: 211px;
     border-radius: 4px;
     background: $skeleton;
     margin-bottom: 16px;
@@ -150,10 +145,10 @@ hr {
       margin-bottom: 24px;
     }
     &:nth-of-type(5) {
-      width: 85%;
+      width: 180px;
     }
     &:nth-of-type(6) {
-      width: 38%;
+      width: 80px;
       margin-bottom: 0;
     }
   }
